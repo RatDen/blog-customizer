@@ -46,7 +46,7 @@ export const ArticleParamsForm = ({ onChange }: Props) => {
 
 	function handleResetOptions() {
 		setParams(defaultArticleState);
-		onChange(params);
+		onChange(defaultArticleState);
 	}
 
 	function handleSubmitOptions(event: FormEvent<HTMLFormElement>) {
