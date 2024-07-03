@@ -1,6 +1,7 @@
 import { FormEvent, useRef, useState } from 'react';
 import clsx from 'clsx';
 import {
+	ArticleStateType,
 	OptionType,
 	backgroundColors,
 	contentWidthArr,
@@ -21,7 +22,7 @@ import styles from './ArticleParamsForm.module.scss';
 import { useOutsideClickClose } from './hooks/useOutsideClickClose';
 
 type Props = {
-	onChange: ({}: typeof defaultArticleState) => void;
+	onChange: ({}: ArticleStateType) => void;
 };
 
 export const ArticleParamsForm = ({ onChange }: Props) => {
@@ -45,6 +46,7 @@ export const ArticleParamsForm = ({ onChange }: Props) => {
 
 	function handleResetOptions() {
 		setParams(defaultArticleState);
+		onChange(params);
 	}
 
 	function handleSubmitOptions(event: FormEvent<HTMLFormElement>) {
